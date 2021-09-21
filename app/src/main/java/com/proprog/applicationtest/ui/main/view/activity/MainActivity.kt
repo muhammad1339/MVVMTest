@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.idanatz.oneadapter.OneAdapter
 import com.proprog.applicationtest.R
 import com.proprog.applicationtest.data.model.StackResponse
 import com.proprog.applicationtest.data.repository.StackRepository
 import com.proprog.applicationtest.databinding.ActivityMainBinding
+import com.proprog.applicationtest.ui.main.adapter.ItemsModule
 import com.proprog.applicationtest.ui.main.adapter.StackAnswersAdapter
 import com.proprog.applicationtest.ui.main.view.fragment.LoadingDialogFragment
 import com.proprog.applicationtest.ui.main.viewmodel.StackViewModel
@@ -23,14 +25,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadingDialogFragment: LoadingDialogFragment
     lateinit var activityMainBinding: ActivityMainBinding
     lateinit var view: View
-    private lateinit var stackAdapter: StackAnswersAdapter
+//    private lateinit var stackAdapter: StackAnswersAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 //        setContentView(R.layout.activity_main)
         view = activityMainBinding.root
         setContentView(view)
-        stackAdapter = StackAnswersAdapter(this)
+//        stackAdapter = StackAnswersAdapter(this)
         val stackRepository = StackRepository()
 
         stackViewModel = ViewModelProvider(this, StackViewModelFactory(stackRepository))
@@ -57,9 +60,9 @@ class MainActivity : AppCompatActivity() {
                         DividerItemDecoration.HORIZONTAL
                     )
                 )
-                adapter = stackAdapter
+//                adapter = stackAdapter
             }
-            stackAdapter.updateList(ArrayList())
+            //stackAdapter.updateList(ArrayList())
             fetchAnswers(siteName)
         }
 
@@ -75,7 +78,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 if (it.status == Status.SUCCESS) {
                     val stackResponse = it.data as StackResponse
-                    stackAdapter.updateList(stackResponse.items.toMutableList())
+//                    stackAdapter.updateList(stackResponse.items.toMutableList())
+                    val oneAdapter = OneAdapter(activityMainBinding.rvStackAnswers) {
+                        itemModules += ItemsModule()
+                    }
+                    oneAdapter.setItems(stackResponse.items.toMutableList())
                     loadingDialogFragment.dismiss()
                     Log.d(TAG, "fetchAnswers: end success ----")
                 }

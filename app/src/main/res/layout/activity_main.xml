@@ -8,6 +8,12 @@
     android:orientation="vertical"
     tools:context=".ui.main.view.activity.MainActivity">
 
+    <CheckBox
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:button="@drawable/cb_selection_button"
+        app:useMaterialThemeColors="false" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editLayoutSiteName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -47,5 +53,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:padding="8dp"/>
+        android:padding="8dp" />
 </LinearLayout>

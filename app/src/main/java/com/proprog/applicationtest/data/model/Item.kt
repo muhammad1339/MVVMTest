@@ -3,11 +3,12 @@ package com.proprog.applicationtest.data.model
 
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
+import com.idanatz.oneadapter.external.interfaces.Diffable
 
 data class Item(
     @SerializedName("answer_id")
     @Expose
-    val answerId: Int,
+    val answerId: Long,
     @SerializedName("content_license")
     @Expose
     val contentLicense: String,
@@ -29,4 +30,7 @@ data class Item(
     @SerializedName("score")
     @Expose
     val score: Int
-)
+) :Diffable {
+    override val uniqueIdentifier: Long = answerId
+    override fun areContentTheSame(other: Any): Boolean = other is Item && answerId == other.answerId
+}
