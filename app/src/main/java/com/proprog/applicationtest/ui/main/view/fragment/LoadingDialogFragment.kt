@@ -30,9 +30,6 @@ companion object{
         super.onViewCreated(view, savedInstanceState)
     }
 
-//    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-//        return super.onCreateDialog(savedInstanceState)
-//    }
 
     override fun onDetach() {
         super.onDetach()

@@ -9,9 +9,9 @@ import com.proprog.applicationtest.utils.ApiResult
 import com.proprog.applicationtest.utils.Status
 import kotlinx.coroutines.Dispatchers
 
-class StackViewModel(var stackRepository: StackRepository) : ViewModel() {
+class StackViewModel : ViewModel() {
     // val stackLiveData: MutableLiveData<StackResponse> = MutableLiveData()
-
+    private val stackRepository = StackRepository()
     fun getStackAnswers(page: String, pageSize: String, site: String) = liveData(Dispatchers.IO) {
         emit(ApiResult.loading(null))
 

@@ -9,7 +9,7 @@ class StackViewModelFactory(val stackRepository: StackRepository) : ViewModelPro
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(StackViewModel::class.java)) {
-            return StackViewModel(stackRepository = stackRepository) as T
+            return StackViewModel() as T
         }
         throw IllegalArgumentException("Unknown class name")
     }
