@@ -1,8 +1,9 @@
 package com.proprog.applicationtest.data.repository
 
 import com.proprog.applicationtest.data.api.ApiClient
-import com.proprog.applicationtest.data.api.ApiService
 import com.proprog.applicationtest.data.model.StackResponse
+import javax.inject.Inject
+import javax.inject.Singleton
 
 class StackRepository {
 

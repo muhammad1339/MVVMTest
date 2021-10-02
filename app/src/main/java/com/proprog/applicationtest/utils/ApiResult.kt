@@ -6,4 +6,8 @@ data class ApiResult<out T>(val status: Status, val data: T?, val message: Strin
         fun <T> loading(data: T): ApiResult<T> = ApiResult<T>(Status.LOADING, data, null)
         fun <T> error(data: T, message: String): ApiResult<T> = ApiResult<T>(Status.ERROR, data, message)
     }
+
+    enum class Status {
+        SUCCESS,ERROR,LOADING
+    }
 }

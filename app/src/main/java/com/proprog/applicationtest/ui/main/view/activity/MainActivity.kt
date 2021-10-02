@@ -3,25 +3,16 @@ package com.proprog.applicationtest.ui.main.view.activity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.idanatz.oneadapter.OneAdapter
-import com.proprog.applicationtest.R
 import com.proprog.applicationtest.data.model.StackResponse
-import com.proprog.applicationtest.data.repository.StackRepository
 import com.proprog.applicationtest.databinding.ActivityMainBinding
 import com.proprog.applicationtest.ui.BaseActivity
 import com.proprog.applicationtest.ui.main.adapter.ItemsModule
-import com.proprog.applicationtest.ui.main.adapter.StackAnswersAdapter
 import com.proprog.applicationtest.ui.main.view.fragment.LoadingDialogFragment
 import com.proprog.applicationtest.ui.main.viewmodel.StackViewModel
-import com.proprog.applicationtest.ui.main.viewmodel.StackViewModelFactory
-import com.proprog.applicationtest.utils.Status
+import com.proprog.applicationtest.utils.ApiResult.*
 
 class MainActivity : BaseActivity<ActivityMainBinding, StackViewModel>() {
 
@@ -71,7 +62,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, StackViewModel>() {
                     Log.d(TAG, "fetchAnswers: end success ----")
                 }
                 if (it.status == Status.ERROR) {
-                    Log.d(TAG, "fetchAnswers: failed XXXXXXXX")
+                    Log.d(TAG, "fetchAnswers: failed ${it.message}")
                     loadingDialogFragment.dismiss()
                 }
 
