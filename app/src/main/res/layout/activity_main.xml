@@ -9,50 +9,6 @@
     android:orientation="vertical"
     tools:context=".ui.main.view.activity.MainActivity">
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp">
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/rb_button_back_state"
-            android:button="@null"
-            android:drawableStart="@drawable/ic_visa"
-            android:drawableEnd="@drawable/rb_button_checked_state"
-            android:drawablePadding="8dp"
-            android:elevation="2dp"
-            android:padding="16dp"
-            android:text="@string/visa"
-            android:textColor="@color/rb_check_text_color_state"
-            android:textSize="18sp"
-            app:useMaterialThemeColors="false" />
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/rb_button_back_state"
-            android:button="@null"
-            android:drawableStart="@drawable/payoneer"
-            android:drawableEnd="@drawable/rb_button_checked_state"
-            android:drawablePadding="8dp"
-            android:elevation="2dp"
-            android:padding="16dp"
-            android:text="@string/master_card"
-            android:textColor="@color/rb_check_text_color_state"
-            android:textSize="18sp" />
-
-    </RadioGroup>
-
-    <!--    <CheckBox-->
-    <!--        android:layout_width="25dp"-->
-    <!--        android:layout_height="25dp"-->
-    <!--        android:button="@drawable/cb_selection_button"-->
-    <!--        app:useMaterialThemeColors="false" />-->
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editLayoutSiteName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

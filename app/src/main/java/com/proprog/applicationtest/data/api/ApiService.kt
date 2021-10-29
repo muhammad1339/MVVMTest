@@ -7,7 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ApiService {
-    //  ?page=1&pagesize=50&site=stackoverflow
     @GET("answers")
     suspend fun getStackAnswers(
         @Query("page") page: String,

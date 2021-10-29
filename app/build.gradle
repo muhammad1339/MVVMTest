@@ -92,8 +92,8 @@ dependencies {
     // optional - RxJava for Room
     //implementation "androidx.room:room-rxjava2:$room_version"
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-native-mt'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1-native-mt'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
@@ -104,4 +104,10 @@ dependencies {
     // Dagger
     implementation 'com.google.dagger:dagger:2.38.1'
     kapt 'com.google.dagger:dagger-compiler:2.38.1'
+    // lottie animations
+    implementation 'com.airbnb.android:lottie:4.2.0'
+
+    def paging_version = "3.0.1"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
 }

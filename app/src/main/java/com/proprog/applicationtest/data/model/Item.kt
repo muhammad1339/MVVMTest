@@ -30,7 +30,4 @@ data class Item(
     @SerializedName("score")
     @Expose
     val score: Int
-) :Diffable {
-    override val uniqueIdentifier: Long = answerId
-    override fun areContentTheSame(other: Any): Boolean = other is Item && answerId == other.answerId
-}
+)
